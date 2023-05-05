@@ -1,0 +1,7 @@
+<app-breadcrumbs data="Biz haqimizda"></app-breadcrumbs>
+
+<div class="container mt-5 text-dark" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+    <div *ngFor="let item of home$ | async" [innerHTML]="item.aboutUs"></div>
+</div>
+
+<app-gallery></app-gallery>

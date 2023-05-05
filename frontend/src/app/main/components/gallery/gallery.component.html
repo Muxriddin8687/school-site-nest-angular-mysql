@@ -1,0 +1,15 @@
+<div class="container my-5">
+    <h2 class="section-title">Rasmlar</h2>
+    <div class="spotlight-group" data-fit="cover" data-autohide="all">
+        <div class="row">
+            <ng-container *ngFor="let item of galleryList$ | async">
+                <div class="mx-auto mb-4 col-11 col-sm-5 col-md-4 col-lg-3 col-xl-3">
+                    <a data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500"
+                        class="spotlight" href="./assets/images/gallery/{{ item.name }}">
+                        <img class="hover-shadow" src="./assets/images/gallery/{{ item.name }}">
+                    </a>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.spotlight-group {
+
+    .spotlight {
+        width: 100%;
+        height: auto;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        };
+    }
+}

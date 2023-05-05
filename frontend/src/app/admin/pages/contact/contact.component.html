@@ -1,0 +1,37 @@
+<div class="container mb-5">
+    <h2 class="section-title">Aloqa uchun ma'lumotlar</h2>
+    <form #f="ngForm" (ngSubmit)="save(f)">
+        <div class="row">
+
+            <div class="mx-auto col-11 col-sm-12">
+                <input name="address" [(ngModel)]="address" placeholder="To'liq manzilni kiriting" type="text" class="form-control mb-4" required minlength="5">
+            </div>
+            <div class="mx-auto col-11 col-sm-12 col-md-6">
+                <input name="phone1" [(ngModel)]="phone1" placeholder="Telefon raqam" type="text" class="form-control mb-4" required minlength="5">
+            </div>
+            <div class="mx-auto col-11 col-sm-12 col-md-6">
+                <input name="phone2" [(ngModel)]="phone2" placeholder="Telefon raqam" type="text" class="form-control mb-4" required minlength="5">
+            </div>
+            <div class="mx-auto col-11 col-sm-12 col-md-6">
+                <input name="email1" [(ngModel)]="email1" placeholder="Emailingizni kiriting" type="email" class="form-control mb-4" required minlength="5">
+            </div>
+            <div class="mx-auto col-11 col-sm-12 col-md-6">
+                <input name="email2" [(ngModel)]="email2" placeholder="Emailingizni kiriting" type="email" class="form-control mb-4" required minlength="5">
+            </div>
+            <div class="mx-auto col-11 col-sm-12 col-md-6">
+                <textarea name="map" [(ngModel)]="map" rows="17" placeholder="Xarita uchun embed text turida matn joylang" class="form-control mb-4" required minlength="5"></textarea>
+            </div>
+            <div class="mx-auto col-11 col-sm-12 col-md-6">
+                <div *ngIf="iframeUrl != null && iframeUrl.length > 0" class="shadow-lg mb-4">
+                    <iframe
+                        [src]="setIframeUrl()"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+        </div>
+        <button [disabled]="f.invalid" type="submit" class="btn btn-primary ms-auto d-block">Saqlash</button>
+    </form>
+
+</div>

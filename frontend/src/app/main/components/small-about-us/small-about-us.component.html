@@ -1,0 +1,24 @@
+<div class="container main-about-us mt-5 pt-5" *ngFor="let item of home$ | async">
+    <div class="row">
+        <div class="col-md-12 col-lg-6 gx-5 mb-4">
+            <div data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="500"
+                class="bg-image hover-overlay ripple shadow-2-strong rounded-5"
+                data-mdb-ripple-color="light">
+                <img
+                    [src]="'./assets/images/carousel/' + item.mainImage"
+                    class="img-fluid img-overlay"/>
+            </div>
+        </div>
+
+        <div class="col-md-12 col-lg-6 gx-5 mb-4">
+            <div data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="500">
+                <h4>
+                    <strong>{{ item.mainTitle }}</strong>
+                </h4>
+                <p class="text-muted">
+                    {{ item.mainText }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<app-breadcrumbs data="Yangiliklar"></app-breadcrumbs>
+
+<section id="news">
+    <div class="container text-center">
+        <h2 class="section-title">Barcha yangiliklar</h2>
+    
+        <div class="row">
+            <ng-container *ngFor="let item of news$ | async">
+                <div class="col-lg-3 col-md-5 col-sm-6 col-11 mx-auto mb-4">
+                    <div class="card" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img
+                                [src]="'./assets/images/news/' + item.image"
+                                class="img-fluid"/>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.title }}</h5>
+                            <p class="card-text">{{ item.text }}</p>
+                            <a routerLink="{{ item.id }}" class="btn btn-primary">Batafsil</a>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</section>

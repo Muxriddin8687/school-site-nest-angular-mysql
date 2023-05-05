@@ -1,0 +1,23 @@
+<div class="container">
+    <h2 class="section-title">Galerya</h2>
+    <div class="row">
+        <ng-container *ngFor="let item of imageList">
+            <div class="mx-auto gallery-img col-11 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-2">
+                <img [src]="imgUrl + item.name" loading="lazy" priority class="img-fluid" alt="Gallery image">
+                <button class="btn btn-danger" (click)="deleteImage( item.name )">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </div>
+        </ng-container>
+
+
+        <div class="mx-auto col-11 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-2">
+            <div class="h-100 border py-3 text-center rounded">
+                <p>File turi: JPG, JPEG, PNG</p>
+                <p>Hajmi: 0 ~ 5 MB</p>
+                <input type="file" (change)="onFileChange($event)" accept=".png,.jpeg,.jpg" #file class="d-none">
+                <button class="btn btn-primary" (click)="file.click()">Rasm tanlash</button>
+            </div>
+        </div>
+    </div>
+</div>

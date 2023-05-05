@@ -1,0 +1,10 @@
+<div class="container mb-4">
+    <h2 class="section-title">Biz haqimizda</h2>
+    <form #f="ngForm" (ngSubmit)="save(f)">
+        <div class="NgxEditor__Wrapper" style="min-height: 250px;">
+            <ngx-editor-menu [editor]="editor" [toolbar]="editorToolbar"></ngx-editor-menu>
+            <ngx-editor [editor]="editor" name="aboutUs" ngModel minlength="3" required></ngx-editor>
+        </div>
+        <button type="submit" class="btn btn-primary d-block ms-auto mt-3">Saqlash</button>
+    </form>
+</div>

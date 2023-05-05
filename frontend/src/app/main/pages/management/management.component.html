@@ -1,0 +1,26 @@
+<app-breadcrumbs data="Jamoa"></app-breadcrumbs>
+
+<section id="team">
+    <div class="container mt-5">
+
+        <div class="row">
+
+            <ng-container *ngFor="let item of team$ | async" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                        <div class="member-img">
+                            <img [src]="'./assets/images/team/' + item.image" class="img-fluid" alt="Jamoa azosining surati">
+                        </div>
+                        <div class="member-info">
+                            <h4>{{ item.fullname }}</h4>
+                            <span>{{ item.position }}</span>
+                            <p>{{ item.text }}</p>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+
+        </div>
+
+    </div>
+</section>

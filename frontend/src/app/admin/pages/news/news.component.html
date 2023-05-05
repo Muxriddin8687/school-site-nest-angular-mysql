@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="d-flex justify-content-between mt-5 mb-4">
+        <h2 class="text-primary">Yangiliklar</h2>
+        <button type="button" class="btn btn-primary btn-sm" data-mdb-toggle="modal" data-mdb-target="#newsModal">
+            Qo'shish
+        </button>
+    </div>
+
+    <div class="row">
+        <ng-container *ngFor="let item of newsList">
+            <div class="col-lg-3 col-md-5 col-sm-6 col-11 mx-auto mb-4">
+                <div class="card">
+                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                        <img *ngIf="item.image.length > 0" src="./assets/images/news/{{ item.image }}" class="img-fluid"
+                            alt="Yangilikning surati">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.title }}</h5>
+                        <p class="card-text">{{ item.text }}</p>
+                        <div class="d-block text-end">
+                            <button routerLink="{{ item.id }}" class="btn btn-warning me-2">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                            <button (click)="delete(item.id, item.image)" class="btn btn-danger">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+
+    <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form #f="ngForm" (ngSubmit)="save(f)">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h5 class="modal-title" id="newsModalLabel">Yangilik qo'shish</h5>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" name="title" placeholder="Mavzu" ngModel class="form-control mb-4"
+                            required>
+                        <textarea name="text" rows="6" placeholder="Ma'lumot" ngModel class="form-control mb-4"
+                            required></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" #closeModalBtn data-mdb-dismiss="modal">Bekor qilish</button>
+                        <button (click)="closeModalBtn.click()" [disabled]="f.invalid" type="submit" class="btn btn-primary">Saqlash</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
